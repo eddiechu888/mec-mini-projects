@@ -8,11 +8,11 @@ class ToScrapeXPathSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for quote in response.xpath("div[@class='quote']"):
+        for quote in response.xpath("//div[@class='quote']"):
             yield {
-                'text': quote.xpath("//span[@class='text']/text()").get(),
-                'author': quote.xpath("//small[@class='author']/text()").get(),
-                'tags': quote.xpath("//div[@class='tags']/a[@class='tag']/text()").getall(),
+                'text': quote.xpath(".//span[@class='text']/text()").get(),
+                'author': quote.xpath(".//small[@class='author']/text()").get(),
+                'tags': quote.xpath(".//div[@class='tags']/a[@class='tag']/text()").getall(),
             }
             
         next_page = response.xpath("//li[@class='next']/a/@href").get()
