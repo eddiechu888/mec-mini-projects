@@ -178,3 +178,6 @@ cython_debug/
 #.idea/
 mec-3.4.1-api-mini-project/.env
 mec-3.4.1-api-mini-project/.env
+*.csv
+*.zip
+mec-3.4.1-api-mini-project/.env
